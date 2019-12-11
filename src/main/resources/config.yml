@@ -1,0 +1,29 @@
+# ----------------------------------------------------------------------------------------------------------------------
+# ${project.artifactId}, version ${project.version} -  Configuration file.
+# .
+# You can specify per-worlds value like that:
+# .
+# trident-despawn-rates:
+#   default: 100        # "default" is applied to all worlds without a specific value
+#   world: 18000        # this is for the world called "world"
+#   world_nether: 500   # for the nether of world "world" (the default nether)
+#   world_the_end: 3000 # same the default end
+# .
+# Keys are world names and values server "ticks" (20 ticks is about 1 second). It's the delay before a thrown trident,
+# planted in a block will despawn. Otherwise, it will use the same value than arrows (default: 1200 ticks = 1 minute),
+# which is very short for a rare item... (could be worse if you had reduced the value as Optimization guide recommend).
+# So, this plugin allows you to customize this delay to let you optimize arrows despawn without impacting tridents.
+# .
+# Note:
+# 1. Trident NOT THROWN but droped on the ground will not use this value, but the item despawn rate instead.
+#    ("world-settings.<world>.item-despawn-rate" in your spigot.yml file.)
+# .
+# 2. If a value is lower than the corresponding "world-settings.<world>.arrow-despawn-rate" from your spigot.yml,
+#    it will be ignored, so you can define a very lower value for arrows into it (I personnaly use 200),
+#    and increase the despawn rate for tridents here.
+# .
+# References:
+# - Jira issue I've posted about this: https://hub.spigotmc.org/jira/browse/SPIGOT-5421
+# - Serv optimization guide: https://www.spigotmc.org/threads/guide-server-optimization⚡.283181 (https://bit.ly/2qKo41m)
+# ----------------------------------------------------------------------------------------------------------------------
+trident-despawn-rates.default: 6000
